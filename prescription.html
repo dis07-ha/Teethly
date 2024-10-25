@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Medical Prescription</title>
+    <link rel="stylesheet" href="prescriptionstyle.css">
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="prescription">
+        <div class="header">
+            <img src="static/logo.png" alt="Logo" id="logoImage">
+            <h1>Teethly-Online Dental Service</h1>
+            <p>Your Address | Phone: 555-1234 | Email: info@healthcareprofessionals.com</p>
+        </div>
+        <div class="prescription-details-container">
+            <div class="section">
+                <h2>Serial Number</h2>
+                <label>Prescription Number:</label> <span id="serialNumber"></span>
+            </div>
+
+            <div class="section">
+                <h2>Doctor's Information</h2>
+                <label>Online Generated Prescription</label><br>
+            </div>
+
+            <div class="section">
+                <h2>Patient's Information</h2>
+                <label>Name:</label><span id="patientName"></span><br>
+                <label>Date of Birth:</label> <span id="patientDOB"></span><br>
+                <label>Gender:</label> <span id="patientGender"></span><br>
+                <label>Mobile Number:</label> <span id="patientMobile"></span><br>
+            </div>
+
+            <div class="section">
+                <h2>Prescription Details</h2>
+                <label>Medication:</label> Ibuprofen<br>
+                <label>Dosage:</label> 200mg<br>
+                <label>Instructions:</label> Take one tablet every 6 hours with water.
+            </div>
+
+            <div class="section">
+                <h2>Patient's image</h2>
+                <label>First image:</label> <span id="uploadedImage1"></span><br>
+                <label>Second image:</label> <span id="uploadedImage2"></span><br>
+                <label>Third image:</label> <span id="uploadedImage3"></span><br>
+                <label>Fourth image:</label> <span id="uploadedImage4"></span><br>
+            </div>
+            </div>        
+        </div>
+    </div>
+    <div class="footer">
+        <div class="download-button-container">
+            <button class="download-button" id="downloadButton" onclick="window.print();">Download PDF</button>
+            <a href="sms://placeholder"> <!-- Replace 'placeholder' with the actual SMS link -->
+                <button class="share-button">Send via SMS</button>
+            </a>
+            <a href="whatsapp://send?text=Placeholder%20Message"> <!-- Replace 'Placeholder%20Message' with the actual WhatsApp message -->
+                <button class="share-button">Send via WhatsApp</button>
+            </a>
+        </div>
+        © 2023 Healthcare Professionals. All rights reserved.
+    </div>
+    <script>
+        page4Functionality();
+    </script>    
+</body>
+</html>

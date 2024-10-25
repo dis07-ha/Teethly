@@ -1,0 +1,117 @@
+ 
+/*patient details page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* Container styles */
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        /* Form styles */
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group {
+            margin: 10px 10px;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            color: #310042;
+        }
+
+        input[type="text"],
+        input[type="date"], 
+        select ,
+        input[type="tel"] {
+            width: 98%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        /* Picture container styles */
+        .picture-container {
+            text-align: center;
+            margin-top: 20px;
+            border: 2px dashed #310042;
+            padding: 20px;
+            border-radius: 5px;
+            display: none;
+        }
+
+        .picture-container label {
+            font-weight: bold;
+            color: #310042;
+            cursor: pointer;
+        }
+
+        .picture-container input[type="file"] {
+            display: none;
+        }
+
+        .picture-container img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* Submit button styles */
+        .submit-button-container {
+            margin-top: 20px;
+        }
+
+        .submit-button {
+            background-color: #310042;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .submit-button:hover {
+            background-color: #220032;
+        }
+
+        /* Button options */
+        .options-container {
+            margin-top: 20px;
+        }
+
+        .options-button {
+            background-color: #310042;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .options-button:hover {
+            background-color: #220032;
+        }

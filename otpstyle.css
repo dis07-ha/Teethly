@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    background-image: url("static/loginpage.png");
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+.otp-container {
+    background-color: #d4a8e26e;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.467);
+    max-width: 400px;
+    width: 90%;
+    position:absolute;
+    left: 100px; 
+    top: 180px; 
+}
+
+h1 {
+    color: #310042;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.otp-input {
+    width: 10px; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 0 5px; 
+    text-align: center;
+}
+
+.verify-button {
+    background-color: #310042;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.verify-button:hover {
+    background-color: #220032;
+}

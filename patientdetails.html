@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Patient Details</title>
+    <link rel="stylesheet" href="patientstyle.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Patient Details</h1>
+        <form class="form" id="patientForm" enctype="multipart/form-data" action="prescription.html" method="get">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter patient's name" required>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required max="2023-08-30">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" placeholder="Enter mobile number" required>
+            </div>
+
+            <!-- Button options -->
+            <div class="options-container">
+                <button class="options-button" type="button" id="cameraOptionButton">Use Camera</button>
+                <button class="options-button" type="button" id="uploadOptionButton">Upload Pictures</button>
+            </div>
+
+            <!-- Picture container boxes -->
+            <div class="picture-container" id="pictureContainer1" action="prescription.html" method="get">
+                <label for="image1">
+                    <img src="camera.png" alt="Camera Icon" width="50">
+                    <br> Capture Image 1
+                </label>
+                <input type="file" id="image1" name="image1" accept="image/*" capture="environment" required>
+                <img id="uploadedImage1" src="" alt="">
+            </div>
+            <div class="picture-container" id="pictureContainer2"action="prescription.html" method="get">
+                <label for="image2">
+                    <img src="camera.png" alt="Camera Icon" width="50">
+                    <br> Capture Image 2
+                </label>
+                <input type="file" id="image2" name="image2" accept="image/*" capture="environment" required>
+                <img id="uploadedImage2" src="" alt="">
+            </div>
+            <div class="picture-container" id="pictureContainer3"action="prescription.html" method="get">
+                <label for="image3">
+                    <img src="camera.png" alt="Camera Icon" width="50">
+                    <br> Capture Image 3
+                </label>
+                <input type="file" id="image3" name="image3" accept="image/*" capture="environment" required>
+                <img id="uploadedImage3" src="" alt="">
+            </div>
+            <div class="picture-container" id="pictureContainer4"action="prescription.html" method="get">
+                <label for="image4">
+                    <img src="camera.png" alt="Camera Icon" width="50">
+                    <br> Capture Image 4
+                </label>
+                <input type="file" id="image4" name="image4" accept="image/*" capture="environment" required>
+                <img id="uploadedImage4" src="" alt="">
+            </div>
+            <!-- Submit button -->
+            <center>
+                <div class="submit-button-container" id="submitContainer">
+                    <button class="submit-button" type="submit" id="submitButton" style="display: none;">Submit</button>
+                </div>
+            </center>
+        </form>
+    </div>
+
+    <script>
+        page3Functionality();
+    </script>
+</body>
+</html>

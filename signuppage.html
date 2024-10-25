@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            padding-left: 30px;
+            padding-right: 50px;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .container h2 {
+            text-align: center;
+            color: #310042;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .form-group input[type="submit"],
+        .form-group input[type="reset"] {
+            background-color: #310042;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #220032;
+        }
+
+        .error-message {
+            color: red;
+            font-size: 14px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Agent Registration</h2>
+        <form id="registrationForm" action="#" method="post">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter a password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                <p class="error-message" id="passwordError"></p>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Register">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </div>
+    <script>
+         document.addEventListener('contextmenu', function(e) {
+             e.preventDefault();
+             });
+        const registrationForm = document.getElementById('registrationForm');
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        const passwordError = document.getElementById('passwordError');
+
+        registrationForm.addEventListener('submit', function (e) {
+            // Password match validation
+            if (passwordInput.value !== confirmPasswordInput.value) {
+                e.preventDefault();
+                passwordError.textContent = "Passwords do not match.";
+            } else {
+                passwordError.textContent = "";
+            }
+        });
+    </script>
+</body>
+</html>

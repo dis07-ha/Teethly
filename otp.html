@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="otpstyle.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="otp-container">
+        <h1>OTP Verification</h1>
+        <form>
+            <div class="form-group">
+                <label for="otp">Enter OTP:</label><br><br>
+                <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+                <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+                <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+                <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+                <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+                <input type="text" class="otp-input" maxlength="1" onkeyup="moveToNext(this)">
+            </div><br><br>
+            <button type="button" class="verify-button" onclick="verifyOTP()">Verify OTP</button>
+        </form>
+    </div>
+    <script>
+        function moveToNext(input) {
+            if (input.value.length >= 1) {
+                var nextInput = input.nextElementSibling;
+                if (nextInput !== null) {
+                    nextInput.focus();
+                }
+            } else if (input.value.length === 0) {
+                var previousInput = input.previousElementSibling;
+                if (previousInput !== null) {
+                    previousInput.focus();
+                }
+            }
+        }
+    
+        function verifyOTP() {
+            var enteredOTP = document.querySelectorAll('.otp-input');
+            var otp = '';
+            enteredOTP.forEach(function(input) {
+                otp += input.value;
+            });
+            if (otp === '123456') {
+                window.location.href = 'patientdetails.html'; 
+            } else {
+                alert('Invalid OTP. Please try again.');
+            }
+        }
+    </script>
+</body>
+</html>

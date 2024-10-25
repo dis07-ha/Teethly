@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .registration-container {
+      text-align: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    label {
+      margin-top: 10px;
+    }
+
+    input {
+      padding: 8px;
+      margin-top: 5px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #registrationResult {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="registration-container">
+    <h2>Patient Registration</h2>
+    <form id="registrationForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" id="birthdate" name="birthdate" required>
+
+      <label for="contact">Contact:</label>
+      <input type="text" id="contact" name="contact" required>
+
+      <button type="submit">Register</button>
+    </form>
+    <div id="registrationResult"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const registrationForm = document.getElementById('registrationForm');
+      const registrationResult = document.getElementById('registrationResult');
+
+      registrationForm.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const birthdate = document.getElementById('birthdate').value;
+        const contact = document.getElementById('contact').value;
+
+        try {
+          const response = await registerPatient({ name, birthdate, contact });
+          displayResult(response.message, response.patient);
+        } catch (error) {
+          console.error('Error registering patient:', error);
+          displayResult('An error occurred during registration.', null);
+        }
+      });
+
+      async function registerPatient(data) {
+        const response = await fetch('http://localhost:3000/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        });
+
+        return response.json();
+      }
+
+      function displayResult(message, patient) {
+        registrationResult.innerHTML = `<p>${message}</p>`;
+        if (patient) {
+          registrationResult.innerHTML += `<p>Patient ID: ${patient.patientId}</p>`;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

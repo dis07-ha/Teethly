@@ -1,0 +1,116 @@
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        background-image: url("static/Landing page.png");
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    .container {
+        background-color: #ffffff
+        border-radius: 8px;
+        padding: 30px;
+        text-align: left;
+        box-shadow: 0 0px 0px rgba(0, 0, 0, 0.467);
+        max-width: 700px;
+        max-height: Auto ;
+        width: 90%;
+        position: Absolute;
+        left: 20px; 
+        top: 180px; 
+    }
+    .logo {
+        width: 400px; 
+        height: 120px;
+    }
+    .get-started-button {
+        background-color: #310042;
+        border-radius:10px ;
+        color: #ffffff;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    .get-started-button:hover {
+        background-color: #310042;
+        border-radius: 10px;
+        border-color: #310042;
+    
+    }
+    .headline {
+        font-size: 36px;
+        color: #310042;
+        margin-bottom: 20px;
+    }
+    .subheadline {
+        font-size: 18px;
+        color: ##310042;
+        margin-bottom: 40px;
+        max-width: Auto ;
+        text-align: left;
+    }
+    .login-button {
+        background-color: #310042;
+        color: #ffffff;
+        border: 2px solid #ffffff;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 18px;
+        text-decoration: none;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+    .login-button:hover {
+        background-color: #ffffff;
+        color: #310042;
+    }
+    nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #32004200;
+        padding: 10px 0;
+        text-align: right;
+        z-index: 100; 
+    }
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    nav li {
+        display: inline;
+        margin: 0 20px;
+        position: relative; 
+    }
+    nav a {
+        text-decoration: none;
+        color: #310042;
+        font-size: 18px;
+        transition: color 0.3s ease-in-out; 
+        position: relative;
+        z-index: 1;
+    }
+    nav li::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #310042;
+        transform: scaleX(0); 
+        transform-origin: center;
+        transition: transform 0.3s ease-in-out; 
+        z-index: -1; 
+    }
+    nav li:hover::before {
+        transform: scaleX(1);
+    }
+

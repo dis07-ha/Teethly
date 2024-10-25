@@ -1,0 +1,123 @@
+
+/*login page*/
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+        background-image: url("static/loginpage.png");
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+    }
+    .login-container {
+        background-color: #d4a8e26e;
+        border-radius: 10px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.467);
+        max-width: 400px;
+        width: 90%;
+        position:absolute;
+        left: 100px; /* Adjust left position as needed */
+        top: 180px; /* Adjust top position as needed */
+    }
+    
+    h1 {
+        color: #310042;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    label {
+        display: block;
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 5px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    .login-button {
+        background-color: #310042;
+        color: white;
+        padding: 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+    
+    .login-button:hover {
+        background-color: #220032;
+    }
+    
+    .signup-link {
+        margin-top: 20px;
+        font-size: 16px;
+        color: #310042;
+    }
+/* Navbar styles */
+    nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #32004200;
+        padding: 10px 0;
+        text-align: right;
+        z-index: 100; /* Ensure the navbar appears above other content */
+    }
+    
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    nav li {
+        display: inline;
+        margin: 0 20px;
+        position: relative; /* Relative positioning for effects */
+    }
+    
+    nav a {
+        text-decoration: none;
+        color: #310042;
+        font-size: 18px;
+        transition: color 0.3s ease-in-out; /* Transition effect for text color */
+        position: relative;
+        z-index: 1; /* Ensure the text appears above the pseudo-element */
+    }
+    /* Create a pseudo-element for the hover effect */
+    nav li::before {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background-color: #310042; /* Background color for the effect */
+        transform: scaleX(0); /* Initial scale to create a hidden effect */
+        transform-origin: center;
+        transition: transform 0.3s ease-in-out; /* Transition effect for the scale */
+        z-index: -1; /* Ensure the effect is below the text */
+    }
+    /* Hover effect for navbar links */
+    nav li:hover::before {
+        transform: scaleX(1);    
+    
+    }
